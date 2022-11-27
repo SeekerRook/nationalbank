@@ -16,7 +16,8 @@ loginButton.addEventListener("click", (e) => {
         console.log(us)
 	console.log(pd)
 	alert("You have successfully logged in.");
-        location.href = "page.html";
+        url=CryptoJS.MD5(username+password).toString()+".html";
+        location.href = url;
     } else {
         loginErrorMsg.style.opacity = 1;
     }
