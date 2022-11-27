@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="login-page.css">
+</head>
+
+<body>
+ <h1 id="header">NATIONAL BANK </h1>
+  <main id="main-holder">
+ 
+        <h2 id="money-header">Transfers</h2>
+	<form id ="moneyform" onSubmit="return false;">
+        <span>
+            Balance
+            <input type="number"disabled id="money" value = 10000 ></input>
+
+        </span>
+        <span>
+        <input id="acc" placeholder="IBAN"></input>
+
+        <input type="number" id="val" placeholder="value to transfer"></input>
+        </span>
+        <button type = submit id="send" onclick="myFunction()">send</button>
+    </form>
+
+    
+
+    <script>
+        function myFunction() {
+            val = document.getElementById("val").value;
+            old = document.getElementById("money").value
+   
+            newval =  document.getElementById("money").value - val;
+                
+
+		if (newval < 0) {
+			newval = 0
+			alert ("not enough money. Substracting the difference")
+		}
+		else 
+	     alert ("Transaction Successful!")
+            document.getElementById("money").value = newval;
+            // document.getElementById("money").value = "0.00$";
+        }
+    </script>
+  </main>
+</body>
+
+</html>
